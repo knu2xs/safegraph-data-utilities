@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to safegraph-data-utilities’s documentation! &mdash; safegraph-data-utilities 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.htm" />
+    <link rel="search" title="Search" href="search.htm" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> safegraph-data-utilities
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.htm" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to safegraph-data-utilities’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">safegraph-data-utilities</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to safegraph-data-utilities’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-safegraph-data-utilities-s-documentation">
+<h1>Welcome to safegraph-data-utilities’s documentation!<a class="headerlink" href="#welcome-to-safegraph-data-utilities-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-sg_data"></span><dl class="py class">
+<dt id="sg_data.SafegraphClient">
+<em class="property">class </em><code class="sig-prename descclassname">sg_data.</code><code class="sig-name descname">SafegraphClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bucket</span><span class="o">=</span><span class="default_value">'sg-c19-response'</span></em>, <em class="sig-param"><span class="n">prefix</span><span class="o">=</span><span class="default_value">'monthly-patterns'</span></em>, <em class="sig-param"><span class="n">access_key</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">secret_key</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sg_data.SafegraphClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Client streamlining process of retrieving data from AWS S3 and preparing a proejct for analysis.</p>
+<dl class="py method">
+<dt id="sg_data.SafegraphClient.get_dataframe_from_remote_path">
+<code class="sig-name descname">get_dataframe_from_remote_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_s3_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sg_data.SafegraphClient.get_dataframe_from_remote_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dataframe for a resource using the remove path, the, “Key,” referncing the path within the bucket in AWS S3.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sg_data.SafegraphClient.get_patterns_dataframe">
+<code class="sig-name descname">get_patterns_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">month</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">safegraph_pois</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">placekeys</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sg_data.SafegraphClient.get_patterns_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a patterns dataframe for a specific month and year with the option (recommended) to filter to a specific
+point of interest using the Safegraph POI ID. A combination of both year and month filters can be used to
+select just a single season from multiple years.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>year</strong> – Required
+Year(s) to retrieve.</p></li>
+<li><p><strong>month</strong> – Optional
+Month(s) to retrieve.</p></li>
+<li><p><strong>safegraph_pois</strong> – Optional
+Safegraph point-of-interest id’s used to filter the data.</p></li>
+<li><p><strong>placekeys</strong> – Optional
+Placekeys used to filter the data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dataframe of Safegraph patterns data.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sg_data</span> <span class="kn">import</span> <span class="n">SafegraphClient</span>
+
+<span class="n">sg_poi</span> <span class="o">=</span> <span class="s1">&#39;sg:af471021a929414cbf69854e6f8f1b0c&#39;</span>  <span class="c1"># white pass ski area</span>
+
+<span class="n">sg</span> <span class="o">=</span> <span class="n">SafegraphClient</span><span class="p">()</span>
+
+<span class="c1"># just getting the months the ski area is open for two consecutive years</span>
+<span class="n">wp_df</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">get_patterns_dataframe</span><span class="p">([</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.htm"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.htm"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.htm"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Joel McCune
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
