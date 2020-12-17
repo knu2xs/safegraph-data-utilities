@@ -1,0 +1,29 @@
+name: sg-data
+
+channels:
+  - esri
+  - conda-forge
+
+dependencies:
+  - arcgis
+  - arcpy
+  - cookiecutter
+  - deep-learning-essentials
+  - jupyterlab
+  - mkdocs
+  - nodejs
+  - pip
+  - pytest
+  - python=3.7
+  - python-dotenv
+  - pyyaml
+  - swifter
+  - pip:
+    - boto3
+    - bump2version
+    - ipykernel
+    - pyarrow
+    - sphinx
+    - sphinx-autodoc-typehints
+    - sphinx_rtd_theme
+    - twine
