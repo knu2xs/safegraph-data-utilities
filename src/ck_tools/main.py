@@ -40,8 +40,6 @@ def add_group(gis: GIS = None, group_name: str = None) -> Group:
         usr = os.getenv('ESRI_GIS_USERNAME')
         pswd = os.getenv('ESRI_GIS_PASSWORD')
 
-
-
     # if no group name provided
     if group_name is None:
 

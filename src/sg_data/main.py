@@ -192,7 +192,7 @@ class SafegraphClient:
             sg = SafegraphClient()
 
             # just getting the months the ski area is open for two consecutive years
-            wp_df = sg.get_patterns_dataframe([2018, 2019], [11, 12, 1, 2, 3, 4]
+            wp_df = sg.get_patterns_dataframe([2018, 2019], [11, 12, 1, 2, 3, 4], safegraph_pois=sg_poi)
 
         """
         # run a data type check on the year input and make sure it is a list
