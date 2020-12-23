@@ -44,6 +44,18 @@ GOTO %1
         ECHO ^>^>^> Data processed.
     )
     EXIT /B
+
+:: Clean up compiled Python files in directory
+:clean
+    ENDLOCAL & (
+
+        :: Remove all pycache files
+        CALL del /S /Q *.pyc
+        CALL del /S /Q *.pyo
+
+        :: Recursively remove __pycahce__ directories
+        CALL for /d /r . %d in (__pycache__) do @if exist "%d" rd /s/q "%d"
+    )
 	
 :: Build the local environment from the environment file
 :env
