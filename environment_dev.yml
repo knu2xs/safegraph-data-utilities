@@ -27,3 +27,4 @@ dependencies:
     - sphinx-autodoc-typehints
     - sphinx_rtd_theme
     - twine
+    - git+https://github.com/knu2xs/demographic-modeling-module
