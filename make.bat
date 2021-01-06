@@ -53,9 +53,10 @@ GOTO %1
         CALL del /S /Q *.pyc
         CALL del /S /Q *.pyo
 
-        :: Recursively remove __pycahce__ directories
-        CALL for /d /r . %d in (__pycache__) do @if exist "%d" rd /s/q "%d"
+        :: Recursively remove __pycahce__ directories - works at command prompt, but cannot get to work in bat file
+ ::       CALL for /d /r . %d in (__pycache__) do @if exist "%d" rd /s/q "%d"
     )
+    EXIT /B
 	
 :: Build the local environment from the environment file
 :env
