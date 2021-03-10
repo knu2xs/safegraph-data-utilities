@@ -40,7 +40,7 @@ ec2:
 	# get, install and configure miniconda
 	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 	chmod 755 ~/miniconda.sh
-	~/miniconda.sh -b -p $(HOME)/miniconda
+	~/miniconda.sh -b -p -u $(HOME)/miniconda
 	~/miniconda/bin/conda init
 	sed -i '1 i\export PATH=/home/ubuntu/miniconda/bin:$PATH' ~/.bashrc
 
