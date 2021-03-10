@@ -46,7 +46,7 @@ ec2:
 
 	# create and activate the project conda environment
 	~/miniconda/bin/conda env create -f ./environment.yml
-	~/miniconda/bin/conda activate $(ENV_NAME)
+	source ~/miniconda/bin/activate $(ENV_NAME)
 
 	# install the local package
 	python -m pip install -e .
