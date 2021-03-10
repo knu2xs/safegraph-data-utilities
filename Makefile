@@ -46,13 +46,12 @@ ec2:
 
 	# create and activate the project conda environment
 	~/miniconda/bin/conda env create -f ./environment.yml
-	source ~/miniconda/bin/activate $(ENV_NAME)
 
 	# install the local package
-	python -m pip install -e .
+	~/miniconda/bin/conda run -n sg-data python -m pip install -e .
 
 	# configure jupyter for remote access with password "jovyan"
-	jupyter notebook --generate-config
+	~/miniconda/bin/conda run -n sg-data jupyter notebook --generate-config
 	sed -i '1 i\c.NotebookApp.port = 8888' ~/.jupyter/jupyter_notebook_config.py
 	sed -i '1 i\c.NotebookApp.password = u"sha1:b37cb398255d:3f676cfe9b00e0c485385b435584ae5518bd14a4"' ~/.jupyter/jupyter_notebook_config.py
 	sed -i '1 i\c.NotebookApp.ip = "0.0.0.0"' ~/.jupyter/jupyter_notebook_config.py
