@@ -9,8 +9,8 @@ PROJECT_NAME = safegraph-data-utilities
 ENV_NAME = sg-data
 
 # make conda commands available in the script, notably for activation
-CONDA_BASE=$(conda info --base)
-source $CONDA_BASE/etc/profile.d/conda.sh
+#CONDA_BASE=$(conda info --base)
+#source $CONDA_BASE/etc/profile.d/conda.sh
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -37,21 +37,21 @@ env:
 # If working in an EC2 environment, set everything up - BETA FEATURE
 ec2:
 
-	# get install and configure miniconda
+	# get, install and configure miniconda
 	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-	~/miniconda.sh -b -p $(HOME)/miniconda
+	chmod 755 ~/miniconda.sh
+	~/miniconda.sh -b -p $(HOME)/miniconda -u
 	~/miniconda/bin/conda init
 	sed -i '1 i\export PATH=/home/ubuntu/miniconda/bin:$PATH' ~/.bashrc
 
 	# create and activate the project conda environment
 	~/miniconda/bin/conda env create -f ./environment.yml
-	~/miniconda/bin/conda activate $(ENV_NAME)
 
 	# install the local package
-	python -m pip install -e .
+	~/miniconda/bin/conda run -n sg-data python -m pip install -e .
 
 	# configure jupyter for remote access with password "jovyan"
-	jupyter notebook --generate-config
+	~/miniconda/bin/conda run -n sg-data jupyter notebook --generate-config
 	sed -i '1 i\c.NotebookApp.port = 8888' ~/.jupyter/jupyter_notebook_config.py
 	sed -i '1 i\c.NotebookApp.password = u"sha1:b37cb398255d:3f676cfe9b00e0c485385b435584ae5518bd14a4"' ~/.jupyter/jupyter_notebook_config.py
 	sed -i '1 i\c.NotebookApp.ip = "0.0.0.0"' ~/.jupyter/jupyter_notebook_config.py
