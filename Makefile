@@ -47,7 +47,7 @@ ec2:
 	~/miniconda/bin/conda env create -f ./environment.yml
 
 	# install the local package
-	~/miniconda/bin/conda run -n sg-data python -m pip install -e .
+	~/miniconda/bin/conda run -n $(ENV_NAME) python -m pip install -e .
 
 	# configure jupyter for remote access with password "jovyan"
 	~/miniconda/bin/conda run -n sg-data jupyter notebook --generate-config
