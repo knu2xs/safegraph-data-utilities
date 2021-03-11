@@ -42,7 +42,7 @@ ec2:
 	chmod 755 ~/miniconda.sh
 	~/miniconda.sh -b -p $(HOME)/miniconda -u
 	~/miniconda/bin/conda init
-	sed -i '1 i\export PATH=/home/ubuntu/miniconda/bin:$PATH' ~/.bashrc
+	export PATH=/home/ubuntu/miniconda/bin:$PATH
 
 	# create and activate the project conda environment
 	~/miniconda/bin/conda env create -f ./environment.yml
