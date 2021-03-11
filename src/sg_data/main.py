@@ -89,7 +89,7 @@ def get_content_dataframe(s3, bucket='sg-c19-response', prefix='monthly-patterns
 def check_list(in_lst, dtype=str):
     """Helper function to ensure input is a list of correct data type."""
 
-    assert isinstance(in_lst, (list, dtype))
+    assert isinstance(in_lst, (list, dtype, tuple))
 
     if isinstance(in_lst, list):
         for itm in in_lst:
