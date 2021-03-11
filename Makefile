@@ -42,7 +42,6 @@ ec2:
 	chmod 755 ~/miniconda.sh
 	~/miniconda.sh -b -p $(HOME)/miniconda -u
 	~/miniconda/bin/conda init
-	export PATH=/home/ubuntu/miniconda/bin:$PATH
 
 	# create and activate the project conda environment
 	~/miniconda/bin/conda env create -f ./environment.yml
@@ -55,6 +54,9 @@ ec2:
 	sed -i '1 i\c.NotebookApp.port = 8888' ~/.jupyter/jupyter_notebook_config.py
 	sed -i '1 i\c.NotebookApp.password = u"sha1:b37cb398255d:3f676cfe9b00e0c485385b435584ae5518bd14a4"' ~/.jupyter/jupyter_notebook_config.py
 	sed -i '1 i\c.NotebookApp.ip = "0.0.0.0"' ~/.jupyter/jupyter_notebook_config.py
+
+	# reload the .bashrc file so conda command will be availble without having to restart the shell
+	source ~/.bashrc
 
 # useful for installing the kernel for the environment
 create_kernel:
