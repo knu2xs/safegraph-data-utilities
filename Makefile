@@ -56,7 +56,7 @@ ec2:
 	sed -i '1 i\c.NotebookApp.ip = "0.0.0.0"' ~/.jupyter/jupyter_notebook_config.py
 
 	# reload the .bashrc file so conda command will be availble without having to restart the shell
-	source ~/.bashrc
+	. ~/.bashrc
 
 # useful for installing the kernel for the environment
 create_kernel:
