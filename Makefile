@@ -55,9 +55,6 @@ ec2:
 	sed -i '1 i\c.NotebookApp.password = u"sha1:b37cb398255d:3f676cfe9b00e0c485385b435584ae5518bd14a4"' ~/.jupyter/jupyter_notebook_config.py
 	sed -i '1 i\c.NotebookApp.ip = "0.0.0.0"' ~/.jupyter/jupyter_notebook_config.py
 
-	# reload the .bashrc file so conda command will be availble without having to restart the shell
-	. ~/.bashrc
-
 # useful for installing the kernel for the environment
 create_kernel:
 	python -m ipykernel install --user --name $(ENV_NAME) --display-name "$(PROJECT_NAME)"
